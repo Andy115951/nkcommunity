@@ -3,6 +3,7 @@ package com.nowcoder.community.entity;
 import java.util.Date;
 
 public class DiscussPost {
+
     private int id;
     private int userId;
     private String title;
@@ -84,6 +85,7 @@ public class DiscussPost {
     public void setScore(double score) {
         this.score = score;
     }
+
     @Override
     public String toString() {
         return "DiscussPost{" +
