@@ -17,7 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletResponse;
+//import javax.servlet.http.HttpServletResponse;
+
+
+import jakarta.servlet.http.HttpServletResponse;
+
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -107,5 +112,6 @@ public class UserController {
             logger.error("读取头像失败: " + e.getMessage());
         }
     }
+
 
 }
