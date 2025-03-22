@@ -1,0 +1,6 @@
+zookeeper
+E:\einstall\kafka_2.12-2.2.0\kafka_2.12-2.2.0>bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+kafka
+E:\einstall\kafka_2.12-2.2.0\kafka_2.12-2.2.0>bin\windows\kafka-server-start.bat config\server.properties
+
