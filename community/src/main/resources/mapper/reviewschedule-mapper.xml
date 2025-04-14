@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nowcoder.community.dao.ReviewScheduleMapper">
+    <!-- 基础结果映射 -->
+    <resultMap id="BaseResultMap" type="com.nowcoder.community.entity.ReviewSchedule">
+        <id property="scheduleId" column="schedule_id" />
+        <result property="itemId" column="item_id" />
+        <result property="userId" column="user_id" />
+        <result property="nextReviewTime" column="next_review_time" />
+        <result property="reviewCycle" column="review_cycle" />
+        <result property="completed" column="is_completed" />
+    </resultMap>
+
+    <!-- 插入复习计划 -->
+    <insert id="insertReviewSchedule" useGeneratedKeys="true" keyProperty="scheduleId">
+        INSERT INTO review_schedule (
+            item_id, user_id, next_review_time, review_cycle, is_completed
+        ) VALUES (
+                     #{itemId}, #{userId}, #{nextReviewTime}, #{reviewCycle}, #{isCompleted}
+                 )
+    </insert>
+    <delete id="deleteByItemId">
+        DELETE FROM review_schedule
+        WHERE item_id = #{itemId}
+    </delete>
+
+    <!-- 根据ID查询 -->
+    <select id="selectById" resultMap="BaseResultMap">
+        SELECT * FROM review_schedule
+        WHERE schedule_id = #{scheduleId}
+    </select>
+
+    <!-- 查询待复习计划 -->
+    <select id="selectPendingReviews" resultMap="BaseResultMap">
+        SELECT * FROM review_schedule
+        WHERE user_id = #{userId}
+          AND is_completed = 0
+          AND next_review_time &lt;= NOW()
+        ORDER BY next_review_time ASC
+    </select>
+
+    <!-- 更新完成状态 -->
+    <update id="updateCompletionStatus">
+        UPDATE review_schedule
+        SET is_completed = #{isCompleted}
+        WHERE schedule_id = #{scheduleId}
+    </update>
+
+    <select id="selectByItemId" resultMap="BaseResultMap">
+        SELECT * FROM review_schedule
+        WHERE item_id = #{itemId}
+        ORDER BY next_review_time ASC
+    </select>
+</mapper>
