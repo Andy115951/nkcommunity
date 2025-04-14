@@ -1,0 +1,7 @@
+2025-03-06 17:34:34,033 INFO [main] c.n.c.RedisTests [StartupInfoLogger.java:53] Starting RedisTests using Java 17.0.10 with PID 20232 (started by 40782 in E:\javacode\workspace4vscode\nk\community\community)
+2025-03-06 17:34:34,042 INFO [main] c.n.c.RedisTests [SpringApplication.java:652] No active profile set, falling back to 1 default profile: "default"
+2025-03-06 17:34:35,250 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:295] Multiple Spring Data modules found, entering strict repository configuration mode
+2025-03-06 17:34:35,255 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:143] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-03-06 17:34:35,308 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:211] Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+2025-03-06 17:34:37,833 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:59] Adding welcome page template: index
+2025-03-06 17:34:38,831 INFO [main] c.n.c.RedisTests [StartupInfoLogger.java:59] Started RedisTests in 5.409 seconds (process running for 6.663)
